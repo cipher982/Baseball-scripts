@@ -1,5 +1,5 @@
-library(dplyr)
 library(plyr)
+library(dplyr)
 
 # Create separate tables for games played and bases stolen per player
 players <- group_by(Batting, playerID)
@@ -14,3 +14,4 @@ over200.steals <- subset(Stolen.bases, playerID %in% over200$playerID)
 final <- transform(over200.steals,  per.game = sbs / over200$gs)
 final <- arrange(final, desc(per.game))
 head(final, 5)
+
