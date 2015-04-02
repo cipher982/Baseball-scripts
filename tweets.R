@@ -12,10 +12,12 @@ homeTimeline (n=15) # get tweets from home timeline
 
 mentions (n=15) # get your tweets that were retweeted
 
-favs <- favorites("r_programming", n =10) # tweets a user has favorited
+favs <- favorites("madziem", n =10) # tweets a user has favorited
 
 
+tweets <- searchTwitter("madziem", n=25) # top 25 tweets that contain search term
 
+tweetsDF <- twListToDF(tweets) # more info about tweets.
 
 
 
