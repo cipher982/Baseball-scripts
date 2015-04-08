@@ -15,7 +15,7 @@ mentions (n=15) # get your tweets that were retweeted
 favs <- favorites("madziem", n =10) # tweets a user has favorited
 
 
-tweets <- searchTwitter("madziem", n=25) # top 25 tweets that contain search term
+tweets <- searchTwitter("roll tide", n=20000, since='2014-01-01') # top 25 tweets that contain search term
 
 tweetsDF <- twListToDF(tweets) # more info about tweets.
 
