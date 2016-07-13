@@ -45,27 +45,27 @@ library(caret);library(ggplot2); library(AppliedPredictiveModeling)
   testingClasse  <- testingRaw[,160]
   
   ## Combine these real quick for the model later
-#  newTraining <- trainingRaw[,8:160]
+  newTraining <- trainingRaw[,8:160]
   
 ## Attempt some pre-processing on the training data
-#  preTraining <- preProcess(trainingData, method=c("center","scale","pca"), thresh = 0.90)
-#  preTraining
+  preTraining <- preProcess(trainingData, method=c("center","scale","pca"), thresh = 0.90)
+  preTraining
   
 ## Perform the predictions on the training data with preprocessed data
-#  trainingClean <- predict(preTraining,trainingData)
-#  testingClean  <- predict(preTraining, testingData)
+  trainingClean <- predict(preTraining,trainingData)
+  testingClean  <- predict(preTraining, testingData)
   
 ## Compute the model with the pre-processed data predictors
   myModel <- train(classe ~ ., data = trainingData, method = 'rpart')
 
 ## And now apply the new model on the testing set
-#  myModelResults <- confusionMatrix(testingClasse, predict(myModel, testingClean))
-#  myModelResults
+  myModelResults <- confusionMatrix(testingClasse, predict(myModel, testingClean))
+  myModelResults
   
 ## Plot the decision tree
   library(rattle); library(rpart.plot)
   fancyRpartPlot(myModel$finalModel)
   
 ## Plot the tree basically
-#  plot(myModel$finalModel, uniform = T, main="Classification Tree")
-#  text(myModel$finalModel, use.n=T, all=T, cex=.8)
+  plot(myModel$finalModel, uniform = T, main="Classification Tree")
+  text(myModel$finalModel, use.n=T, all=T, cex=.8)
