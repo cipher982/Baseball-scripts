@@ -8,6 +8,9 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
+#R Libraries
+win-library
+
 # Windows Installer files
 *.cab
 *.msi
